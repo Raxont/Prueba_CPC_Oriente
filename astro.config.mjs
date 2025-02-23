@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
-import tailwind from "@tailwindcss/vite";
+import tailwind from "@astrojs/tailwind";
 
 // Leer variables de entorno de process.env
 const port = Number(import.meta.env.VITE_PORT_FRONTEND) || 1234;

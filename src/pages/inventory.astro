@@ -1,0 +1,14 @@
+---
+// Importar correctamente un componente React en Astro con client:load
+import Inventorys from "../components/Inventory.tsx";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Inventario">
+    <a href="/" class="mt-6">
+        <button class="px-6 py-3 bg-black text-white text-lg border-red-800 border rounded-xl hover:bg-red-800 focus:ring-2 focus:ring-blue-400">
+          Volver al inicio
+        </button>
+      </a>
+  <Inventorys client:load />
+</MainLayout>
