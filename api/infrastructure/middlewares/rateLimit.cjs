@@ -113,7 +113,7 @@ const botUserAgents = [
 
 exports.limiTotal = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutos
-	max: 1000, // Limitar cada IP a 100 solicitudes por ventana
+	max: 1000, // Limitar cada IP a 1000 solicitudes por ventana
 	handler: (req, res, next) => {
 		const userAgent = req.get('User-Agent');
 		// Verificar si el User-Agent coincide con alguno de los patrones de bots
