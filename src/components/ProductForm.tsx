@@ -1,5 +1,7 @@
 import React from "react";
 
+// Definimos la interfaz `FormState` que describe la estructura del formulario.
+// Contendrá los campos necesarios para crear o actualizar un producto: nombre, precio, cantidad y descripción.
 interface FormState {
   name: string;
   price: number;
@@ -7,6 +9,11 @@ interface FormState {
   description: string;
 }
 
+// Definimos la interfaz `Props` que describe las propiedades que el componente `ProductForm` acepta.
+// - `form`: objeto de tipo `FormState` que contiene los datos actuales del formulario.
+// - `setForm`: función para actualizar el estado del formulario, que recibe el nuevo estado como argumento.
+// - `handleSubmit`: función que maneja el evento de envío del formulario.
+// - `editingId`: identificador del producto que se está editando (si es que estamos editando un producto existente).
 interface Props {
   form: FormState;
   setForm: React.Dispatch<React.SetStateAction<FormState>>;
@@ -14,6 +21,8 @@ interface Props {
   editingId: string | null;
 }
 
+// Componente funcional `ProductForm`, que renderiza un formulario para crear o editar productos.
+// Recibe las propiedades definidas en `Props`.
 const ProductForm: React.FC<Props> = ({ form, setForm, handleSubmit, editingId }) => {
   return (
     <form onSubmit={handleSubmit} className="mb-4 flex gap-2 border-wh-2">
@@ -56,4 +65,5 @@ const ProductForm: React.FC<Props> = ({ form, setForm, handleSubmit, editingId }
   );
 };
 
+// Exportamos el componente `ProductForm` para poder utilizarlo en otras partes de la aplicación.
 export default ProductForm;
