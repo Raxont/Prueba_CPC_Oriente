@@ -1,10 +1,11 @@
-const ConnectToDatabase = require('./infrastructure/database/mongodb.cjs');
-const createServer = require('./infrastructure/server/server.cjs');
+import ConnectToDatabase from './infrastructure/database/mongodb.js';
+import createServer from './infrastructure/server/server.js';
+process.loadEnvFile();
 
 //* Función principal que inicia la aplicación
 const startApp = async () => {
     //* Creación de una instancia de la clase para conectarse a la base de datos
-    let connectToDatabase = new ConnectToDatabase();
+    const connectToDatabase = ConnectToDatabase.getInstance();
 
     //* Establece la conexión con la base de datos
     await connectToDatabase.connectOpen();

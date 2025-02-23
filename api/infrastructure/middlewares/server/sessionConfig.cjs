@@ -1,4 +1,5 @@
 const session = require("express-session"); // Importa el middleware de sesiones para Express
+process.loadEnvFile();
 
 //* Configuración de la sesión para Express
 /**

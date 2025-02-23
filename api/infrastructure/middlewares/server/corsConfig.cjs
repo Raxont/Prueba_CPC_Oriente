@@ -1,4 +1,5 @@
 const cors = require("cors"); // Importa el middleware CORS para gestionar las solicitudes de origen cruzado
+process.loadEnvFile();
 
 //* Configuración de CORS (Cross-Origin Resource Sharing)
 /**
